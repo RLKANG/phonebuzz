@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PhoneBuzz</title>
+  <style>
+  body {
+   background-color:powderblue;
+  }
+  table, th, td {
+   border: 1px solid black;
+  }
+  </style>
+  <h1 style="font-size:60px;">PHONEBUZZ</h1>
+</head>
+<body>
+
+  <form action="/call" method="POST" id="form">
+	<u>Phone Number:</u> (add +1 before number) <br></br> <input type="text" name ="pnumber" id="pnumber"> <br></br>
+        <u>Delay Amount:</u> <br></br> 
+        Minutes: <input id="minutes" name="minutes" type="number" value="0" min="0">
+        Seconds: <input id="seconds" name="seconds" type="number" value="0" min="0"> <br></br>
+        <input type="submit" value="Call">
+  </form>
+  
+  <br><br>
+  <u>Call History:</u>
+  <br></br>
+
+  <table class="calls">
+   <tr>
+    <th> Call ID </th>
+    <th> Date </th>
+    <th> Delay Minutes </th>
+    <th> Delay Seconds </th>
+    <th> Phone Number </th>
+    <th> Entered Number </th>
+    <th> Replay </th>
+   </tr>
+  <% for (var i=0; i<calls.length; i++) {%>
+   <tr class="call">
+    <th><%= calls[i]._id %></th>
+    <th><%= calls[i].time %></th>
+    <th><%= calls[i].delay_min %></th>
+    <th><%= calls[i].delay_sec %></th>
+    <th><%= calls[i].phone_number %></th>
+    <th><%= calls[i].user_number %></th>
+    <th>
+     <form action = /replay/<%= calls[i]._id %> method="POST">
+      <button type="submit">Replay</button>
+     </form>
+    </th>
+   </tr>
+  <% } %>
+  </table>
+  
+</body>
+</html>
+

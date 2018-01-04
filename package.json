@@ -1,0 +1,22 @@
+{
+  "name": "phonebuzz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-hbs": "^1.0.4",
+    "mongodb": "^2.2.33",
+    "path": "^0.12.7",
+    "twilio": "^3.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
